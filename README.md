@@ -18,7 +18,7 @@ An AI-powered tool that reads aggregated tabular data (CSV or Excel) and generat
 
 Upload one or more spreadsheets. The engine reads the tables, feeds them into Google's Gemini API with a carefully engineered system prompt, and returns a structured executive analysis: Executive Summary, Key Indicators, Findings, Risks, and Next Steps.
 
-The value is not the code — it's the **prompt engineering**. The system prompt enforces the persona of a senior data consultant briefing a CEO, forbids fabricated numbers, requires cross-referencing between tables, and locks output structure. Same code + different prompt = different product.
+The value is not the code, it's the **prompt engineering**. The system prompt enforces the persona of a senior data consultant briefing a CEO, forbids fabricated numbers, requires cross-referencing between tables, and locks output structure. Same code + different prompt = different product.
 
 ### Stack
 
@@ -31,7 +31,7 @@ The value is not the code — it's the **prompt engineering**. The system prompt
 
 1. Aggregate your data in Power BI (or any BI tool) into small summary tables (KPIs, breakdowns).
 2. Export each summary as CSV or Excel.
-3. Upload to the web panel — or run the CLI script for local batch runs.
+3. Upload to the web panel or run the CLI script for local batch runs.
 4. Read the generated executive analysis.
 
 ### Running locally
@@ -96,7 +96,7 @@ Reasoning is documented here because it's the part worth reading.
 
 Faça upload de uma ou mais planilhas. A engine lê as tabelas, alimenta na Gemini API com um system prompt cuidadosamente construído, e retorna uma análise executiva estruturada: Resumo Executivo, Indicadores-Chave, Achados, Riscos e Próximos Passos.
 
-O valor não está no código — está na **engenharia de prompt**. O system prompt força a persona de um consultor sênior apresentando pro CEO, proíbe números inventados, exige cruzamento entre tabelas e trava a estrutura do output. Mesmo código + prompt diferente = produto diferente.
+O valor não está no código, está na **engenharia de prompt**. O system prompt força a persona de um consultor sênior apresentando pro CEO, proíbe números inventados, exige cruzamento entre tabelas e trava a estrutura do output. Mesmo código + prompt diferente = produto diferente.
 
 ### Stack
 
@@ -109,7 +109,7 @@ O valor não está no código — está na **engenharia de prompt**. O system pr
 
 1. Agregue seus dados no Power BI (ou qualquer BI) em tabelas-resumo pequenas (KPIs, breakdowns).
 2. Exporte cada resumo como CSV ou Excel.
-3. Suba no painel web — ou rode o script CLI pra batch local.
+3. Suba no painel web ou rode o script CLI pra batch local.
 4. Leia a análise executiva gerada.
 
 ### Rodando localmente
