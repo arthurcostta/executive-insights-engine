@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Executive Insights Engine</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Painel de arquivos">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">EI</span>
+          <div>
+            <h1>Executive Insights Engine</h1>
+            <p>Análise executiva com IA</p>
+          </div>
+        </div>
+
+        <form id="uploadForm" class="upload-form">
+          <label id="dropzone" class="dropzone" for="fileInput">
+            <input
+              id="fileInput"
+              type="file"
+              name="files"
+              accept=".csv,.xlsx,.xls"
+              multiple
+            />
+            <span class="dropzone-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <path d="M12 3v12m0-12 4 4m-4-4-4 4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" />
+              </svg>
+            </span>
+            <strong>CSV ou Excel</strong>
+            <span>Selecionar arquivos</span>
+          </label>
+
+          <div class="file-list" id="fileList" aria-live="polite"></div>
+
+          <button class="primary-button" type="submit" id="analyzeButton" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 13h5l2-7 4 14 2-7h3" />
+            </svg>
+            Gerar análise com IA
+          </button>
+        </form>
+
+        <div class="status-panel" id="statusPanel">
+          <span class="status-dot idle" id="statusDot"></span>
+          <span id="statusText">Aguardando arquivos</span>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Inteligência Artificial aplicada</p>
+            <h2>Análise Executiva com IA</h2>
+          </div>
+          <div class="actions">
+            <span class="ai-chip" title="Análise gerada com Gemini API">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m12 3 1.7 5.2L19 10l-5.3 1.8L12 17l-1.7-5.2L5 10l5.3-1.8z" />
+                <path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" />
+              </svg>
+              Gemini AI
+            </span>
+            <button class="icon-button" type="button" id="copyButton" disabled title="Copiar análise">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 8h10v12H8z" />
+                <path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>
+            </button>
+            <button class="icon-button" type="button" id="downloadButton" disabled title="Baixar Markdown">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m0 0 4-4m-4 4-4-4" />
+                <path d="M5 21h14" />
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <section class="metrics-band" aria-label="Resumo dos arquivos">
+          <div class="metric">
+            <span>Arquivos</span>
+            <strong id="fileCount">0</strong>
+          </div>
+          <div class="metric">
+            <span>Tabelas</span>
+            <strong id="tableCount">0</strong>
+          </div>
+          <div class="metric">
+            <span>Linhas lidas</span>
+            <strong id="rowCount">0</strong>
+          </div>
+          <div class="metric">
+            <span>Status</span>
+            <strong id="runState">Pronto</strong>
+          </div>
+          <div class="metric">
+            <span>Motor IA</span>
+            <strong>Gemini</strong>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel data-panel">
+            <div class="section-heading">
+              <h3>Dados Recebidos</h3>
+              <span id="generatedAt">Sem execução</span>
+            </div>
+            <div id="tableSummary" class="table-summary empty-state">
+              Nenhuma tabela carregada.
+            </div>
+          </div>
+
+          <article class="panel analysis-panel">
+            <div class="section-heading">
+              <div>
+                <h3>Análise Executiva com IA</h3>
+                <span>Insights gerados a partir dos dados enviados</span>
+              </div>
+              <span class="ai-badge">IA Generativa</span>
+              <div class="progress" id="progressBar" aria-hidden="true"></div>
+            </div>
+            <div id="analysisOutput" class="analysis-output empty-state">
+              O resultado aparecerá aqui.
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js?v=20260722-fast"></script>
+  </body>
+</html>
